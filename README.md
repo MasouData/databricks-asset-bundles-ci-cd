@@ -30,6 +30,7 @@ graph LR
     F --> G[Run Job]
 ```
 
+![Pipeline workflow Screenshot](./image/cicd.png)
 ---
 
 ## Project Structure
