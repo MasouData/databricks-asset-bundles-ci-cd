@@ -1,0 +1,24 @@
+name: "production_deployment"
+
+concurrency: 1
+
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - 'first_bundle/**'
+
+jobs:
+  deploy:
+    name: "Deploy bundle"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: databricks/setup-cli@main
+      - run: databricks bundle deploy
+        working-directory: first_bundle
+        env:
+          DATABRICKS_TOKEN: ${{secrets.SP_TOKEN}}
+          DATABRICKS_BUNDLE_ENV: prod
