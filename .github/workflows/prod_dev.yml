@@ -28,7 +28,7 @@ jobs:
           
       # RUN THE JOB
       - name: Run the Job
-        run: databricks bundle run prod_first_ci_cd_bundle --target prod
+        run: databricks bundle run first_ci_cd_bundle --target prod
         working-directory: first_bundle
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
