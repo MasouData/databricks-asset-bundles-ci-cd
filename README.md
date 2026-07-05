@@ -1,11 +1,7 @@
-# databricks-asset-bundles-ci-cd
-<<<<<<< Updated upstream
+# Databricks Asset Bundles CI/CD
+
 Practicing CI/CD for Databricks using Databricks Asset Bundles (DABs) with GitHub Actions. Run Job
-=======
 
-Practicing CI/CD for Databricks using Databricks Asset Bundles (DABs) with GitHub Actions.
-
----
 
 ## Overview
 
