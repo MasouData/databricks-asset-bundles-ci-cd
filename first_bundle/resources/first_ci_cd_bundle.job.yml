@@ -22,9 +22,20 @@ resources:
           default: ${var.schema}
 
       tasks:
-        - task_key: notebook_task
+        - task_key: customer
           notebook_task:
-            notebook_path: ../src/ci_cd_notebook.ipynb
+            notebook_path: ../src/customer.ipynb
+            # base_parameters:
+            #   catalog: ci_cd_bundle_dev
+            #   schema: demo_schema
+        - task_key: transaction
+          depends_on:
+            - task_key: customer
+          notebook_task:
+            notebook_path: ../src/transaction.ipynb
+            # base_parameters:
+            #   catalog: ci_cd_bundle_dev
+            #   schema: demo_schema
 
       environments:
         - environment_key: default

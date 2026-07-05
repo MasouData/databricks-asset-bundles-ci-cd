@@ -20,7 +20,9 @@ targets:
     # - Deployed resources get prefixed with '[dev my_user_name]'
     # - Any job schedules and triggers are paused by default.
     # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
-    mode: development
+    # mode: development
+    presets:
+      name_prefix: dev_
     default: true
     workspace:
       host: https://dbc-760e4c37-d0a0.cloud.databricks.com
@@ -29,12 +31,14 @@ targets:
       schema: demo_schema
   prod:
     mode: production
+    presets:
+      name_prefix: prod_
     workspace:
       host: https://dbc-760e4c37-d0a0.cloud.databricks.com
       # We explicitly deploy to /Workspace/Users/masoud_aghayan200@yahoo.com to make sure we only have a single copy.
       root_path: /Workspace/Users/masoud_aghayan200@yahoo.com/.bundle/${bundle.name}/${bundle.target}
     variables:
-      catalog: ci_cd_bundle_dev
+      catalog: ci_cd_bundle_pro
       schema: demo_schema
     permissions:
       - user_name: masoud_aghayan200@yahoo.com
