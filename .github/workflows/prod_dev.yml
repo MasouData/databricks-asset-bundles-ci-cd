@@ -16,9 +16,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
       - uses: databricks/setup-cli@main
-      - run: databricks bundle deploy
+      
+      - name: Deploy to Production
+        run: databricks bundle deploy --target prod  # Explicitly specify target
         working-directory: first_bundle
         env:
-          DATABRICKS_TOKEN: ${{secrets.SP_TOKEN}}
-          DATABRICKS_BUNDLE_ENV: prod
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}  # workspace URL
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
