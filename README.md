@@ -6,7 +6,7 @@ Practicing CI/CD for Databricks using Databricks Asset Bundles (DABs) with GitHu
 
 ## Overview
 
-This repository implements a fully automated CI/CD pipeline for Databricks. By leveraging **Databricks Asset Bundles (DABs)**, I treat our Databricks resources (jobs, notebooks, and configurations) as infrastructure-as-code.  
+This repository implements a fully automated CI/CD pipeline for Databricks. By leveraging **Databricks Asset Bundles (DABs)**, I treat my Databricks resources (jobs, notebooks, and configurations) as infrastructure-as-code.  
 
 The pipeline is triggered automatically whenever a Pull Request is **merged from the `dev` branch into the `main` (production) branch**. It deploys the updated bundle to the production workspace and immediately starts the production job—ensuring a seamless, hands-off release process.
 
@@ -43,7 +43,7 @@ The repository is organized to keep the bundle configuration separate from the C
 │       └── production_deployment.yml   # GitHub Actions workflow for CI/CD
 ├── first_bundle/                       # Databricks Asset Bundle
 │   ├── databricks.yml                  # Main configuration (targets, variables, permissions)
-│   └── resources/                      # YAML definitions for Jobs and other assets
+│   └── resmyces/                      # YAML definitions for Jobs and other assets
 ├── image/
 │   └── proof.png                       # Screenshot of successful pipeline execution
 └── README.md                           # This file
@@ -66,11 +66,11 @@ The pipeline is defined in `.github/workflows/production_deployment.yml`.
 4. **Run the Job:** Runs `databricks bundle run first_ci_cd_bundle --target prod` to start the production job immediately after deployment.
 
 ### Environment & Secrets
-The following secrets must be configured in your GitHub repository settings (**Settings** → **Secrets and variables** → **Actions**):
+The following secrets must be configured in GitHub repository settings (**Settings** → **Secrets and variables** → **Actions**):
 
 | Secret Name | Description |
 | :--- | :--- |
-| `DATABRICKS_HOST` | Your Databricks workspace URL (e.g., `https://dbc-760e4c37-d0a0.cloud.databricks.com`) |
+| `DATABRICKS_HOST` | Databricks workspace URL (e.g., `https://dbc-760e4c37-d0a0.cloud.databricks.com`) |
 | `SP_TOKEN` | Databricks Personal Access Token (PAT) or Service Principal token. |
 
 ---
