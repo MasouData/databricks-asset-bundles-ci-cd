@@ -6,7 +6,7 @@ Practicing CI/CD for Databricks using Databricks Asset Bundles (DABs) with GitHu
 
 ## Overview
 
-This repository implements a fully automated CI/CD pipeline for Databricks. By leveraging **Databricks Asset Bundles (DABs)**, we treat our Databricks resources (jobs, notebooks, and configurations) as infrastructure-as-code.  
+This repository implements a fully automated CI/CD pipeline for Databricks. By leveraging **Databricks Asset Bundles (DABs)**, I treat our Databricks resources (jobs, notebooks, and configurations) as infrastructure-as-code.  
 
 The pipeline is triggered automatically whenever a Pull Request is **merged from the `dev` branch into the `main` (production) branch**. It deploys the updated bundle to the production workspace and immediately starts the production job—ensuring a seamless, hands-off release process.
 
@@ -14,7 +14,7 @@ The pipeline is triggered automatically whenever a Pull Request is **merged from
 
 ## Git Branching Strategy
 
-We follow a simple three-tier branching model to maintain a clean separation between development and production:
+I follow a simple three-tier branching model to maintain a clean separation between development and production:
 
 * **`feature/*` branches**: For isolated feature development, bug fixes, and experimentation.
 * **`dev` branch**: The integration branch where multiple features are merged and tested together.
